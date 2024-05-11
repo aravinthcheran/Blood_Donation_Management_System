@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../CSS/NavBar.css';
-import SignUp from './SignUp';
 
 const Donar = () => {
   const [menu , setMenu] = useState("SignUp");
@@ -13,13 +12,13 @@ const Donar = () => {
       <ul className="nav-menu">
       <li onClick={() => {setMenu("MainPage")}}><Link style = {{textDecoration : 'none'}}to= '/'>MainPage{menu==='MainPage' ? <hr/> : null}</Link></li>
         <li onClick={() => {setMenu("SignUp")}}><Link style = {{textDecoration : 'none'}}to= '/login/SignUp'>SignUp{menu==='SignUp' ? <hr/> : null}</Link></li>
-
       </ul>
       <div className="nav-login-cart">
-        <Link to= '/Login'><button>Login</button></Link>
+        <Link to= '/pages/LoginDonar'><button>Login</button></Link>
       </div>
     </div>
   )
 }
 
 export default Donar
+

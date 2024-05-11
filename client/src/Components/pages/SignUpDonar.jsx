@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const SignUp = () => {
     const [values, setValues] = useState({
@@ -75,7 +76,7 @@ const SignUp = () => {
                     </div>
                     <div className="col-md-12 text-center">
                         <p>By signing up, you agree to our terms and policies</p>
-                        <a to='/' className='btn btn-default border w-50 bg-light rounded-0 text-decoration-none'>Login</a>    
+                        <Link to='/pages/LoginDonar' className='btn btn-default border w-50 bg-light rounded-0 text-decoration-none'>Login</Link>    
                     </div>
                 </form>
             </div>

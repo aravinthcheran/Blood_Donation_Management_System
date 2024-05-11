@@ -1,21 +1,30 @@
-// App.js
 import React from "react";
-import { BrowserRouter, Route , Routes} from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MainPage from "./Components/MainPage";
-import Donar from "./Components/login/Donar";
-import Hospital from "./Components/login/Hospital";
-import Staff from "./Components/login/Staff";
-import SignUp from "./Components/login/SignUp";
+import LoginDonor from "./Components/pages/LoginDonor"; // Updated import
+import LoginHospital from "./Components/pages/LoginHospital"; // Assuming you have a LoginHospital component
+import SignUpDonar from "./Components/pages/SignUpDonar";
+import SignUpHospital from "./Components/pages/SignUpHospital";
+import SignUpPatient from "./Components/pages/SignUpPatient";
+import Patient from "./Components/pages/Patient";
+import Hospital from "./Components/pages/Hospital";
+import LoginPatient from "./Components/pages/LoginPatient";
+import Donar from "./Components/pages/Donar";
 
 const App = () => {
   return (
-    <BrowserRouter> 
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainPage />} />
-        <Route path="/login/Donar" element={<Donar/>} />
-        <Route path="/login/Hospital" element={<Hospital/>} />
-        <Route path="/login/Staff" element={<Staff/>} />
-        <Route path='/login/SignUp' element={<SignUp/>} />
+        <Route path="/pages/LoginDonar" element={<LoginDonor />} /> {/* Updated path */}
+        <Route path="/pages/LoginHospital" element={<LoginHospital />} /> {/* Assuming you have a LoginHospital component */}
+        <Route path="/pages/SignUpDonar" element={<SignUpDonar />} />
+        <Route path="/pages/SignUpHospital" element={<SignUpHospital />} />
+        <Route path="/pages/SignUpPatient" element={<SignUpPatient />} />
+        <Route path="/pages/Patient" element={<Patient />} />
+        <Route path="/pages/Hospital" element={<Hospital />} />
+        <Route path="/pages/LoginPatient" element={<LoginPatient />} />
+        <Route path="/pages/Donar" element={<Donar />} />
       </Routes>
     </BrowserRouter>
   );
