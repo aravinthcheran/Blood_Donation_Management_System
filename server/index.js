@@ -8,6 +8,8 @@ import donorRoutes from "./routes/donor.js";
 import hospitalRoutes from "./routes/hospital.js";
 import bloodBankRoutes from "./routes/bloodBank.js";
 import patientRoutes from "./routes/patient.js";
+import userRouter from "./routes/user.route.js";
+import authRouter from './routes/auth.route.js';
 
 // Mongo configuration
 dotenv.config();
@@ -23,7 +25,9 @@ mongoose
 // Express configuration
 const app = express();
 app.use(express.json());
+app.use('/api/user', userRouter);
 app.use("/donors", donorRoutes);
+app.use('/api/auth', authRouter);
 app.use("/hospitals", hospitalRoutes);
 app.use("/bloodbanks", bloodBankRoutes);
 app.use("/patients", patientRoutes);
