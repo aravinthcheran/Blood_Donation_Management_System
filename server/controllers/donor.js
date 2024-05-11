@@ -7,7 +7,8 @@ export const getDonors = async (req, res) => {
     const donors = await Donor.find();
     res.status(200).json(donors);
   } catch (error) {
-    res.status(404).json({ message: error.message });
+    console.error("Error getting donors:", error);
+    res.status(500).send("Internal server error");
   }
 };
 
