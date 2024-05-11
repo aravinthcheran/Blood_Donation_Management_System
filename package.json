@@ -1,6 +1,7 @@
 {
   "name": "blooddonation",
   "version": "1.0.0",
+  "type": "module",
   "description": "connect donors and receivers",
   "main": "index.js",
   "scripts": {
@@ -15,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/aravinthcheran/DBMSProject/issues"
   },
-  "homepage": "https://github.com/aravinthcheran/DBMSProject#readme"
+  "homepage": "https://github.com/aravinthcheran/DBMSProject#readme",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "mongoose": "^8.3.4"
+  }
 }
