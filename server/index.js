@@ -1,0 +1,29 @@
+import express from "express";
+import dotenv from "dotenv";
+import mongoose from "mongoose";
+
+import donorRoutes from "./routes/donor.js";
+
+// Mongo configuration
+dotenv.config();
+mongoose
+  .connect(process.env.MONGO)
+  .then(() => {
+    console.log("Connected to MongoDB!");
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
+// Express configuration
+const app = express();
+app.use(express.json());
+app.use("/donors", donorRoutes);
+
+app.listen(process.env.PORT, () => {
+  try {
+    console.log(`Server is running on port ${process.env.PORT}`);
+  } catch (error) {
+    console.log(error);
+  }
+});
