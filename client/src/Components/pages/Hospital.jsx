@@ -17,7 +17,7 @@ const Hospital = () => {
 
       </ul>
       <div className="nav-login-cart">
-        <Link to= '/Login'><button>Login</button></Link>
+        <Link to= '/pages/LoginHospital'><button>Login</button></Link>
       </div>
     </div>
   )
