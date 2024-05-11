@@ -5,7 +5,7 @@ import {
   createPatient,
   updatePatient,
   deletePatient,
-} from "../controllers/patients.js";
+} from "../controllers/patient.js";
 
 const router = express.Router();
 router.get("/", getPatients);

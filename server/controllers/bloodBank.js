@@ -1,4 +1,4 @@
-import BloodBank from "../models/BloodBank";
+import BloodBank from "../models/BloodBank.js";
 
 // Get all blood banks
 export const getBloodBanks = async (req, res) => {

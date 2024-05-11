@@ -7,7 +7,7 @@ import mongoose from "mongoose";
 import donorRoutes from "./routes/donor.js";
 import hospitalRoutes from "./routes/hospital.js";
 import bloodBankRoutes from "./routes/bloodBank.js";
-import patientRoutes from "./routes/patients.js";
+import patientRoutes from "./routes/patient.js";
 
 // Mongo configuration
 dotenv.config();
