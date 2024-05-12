@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import MainPage from "./Components/MainPage";
+import MainPage from "./components/MainPage";
 import LoginDonor from "./pages/LoginDonor"; // Updated import
 import LoginHospital from "./pages/LoginHospital"; // Assuming you have a LoginHospital component
 import SignUpDonar from "./pages/SignUpDonar";
