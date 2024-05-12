@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-// import 'bootstrap/dist/css/bootstrap.min.css'; // Assuming you're using Bootstrap for styling
+import 'bootstrap/dist/css/bootstrap.min.css'; // Assuming you're using Bootstrap for styling
 
 const SignUpPatient = () => {
   const [values, setValues] = useState({
