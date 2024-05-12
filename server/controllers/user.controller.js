@@ -18,6 +18,24 @@ export const getUsers = async (req, res, next) => {
   }
 };
 
+export const createUser = async (req, res, next) => {
+  try {
+    const newUser = new User({
+      username: req.body.username,
+      email: req.body.email,
+      password: bcryptjs.hashSync(req.body.password, 10),
+      avatar: req.body.avatar || User.avatar,
+    });
+
+    const user = await newUser.save();
+    const { password, ...rest } = user._doc;
+
+    res.status(201).json(rest);
+  } catch (error) {
+    next(error);
+  }
+};
+
 export const updateUser = async (req, res, next) => {
   if (req.user.id !== req.params.id)
     return next(errorHandler(401, "You can only update your own account!"));

@@ -1,56 +1,66 @@
-import React, { useState } from "react";
-// import 'bootstrap/dist/css/bootstrap.min.css';
-import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const SignUp = () => {
   const [values, setValues] = useState({
-    name: "",
-    password: "",
+    username: "",
     email: "",
-    age: "",
+    password: "",
+    avatar: "",
     gender: "",
-    issues: "",
     address: "",
     contact: "",
+    age: null,
   });
 
   const handleChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    axios
-      .post("http://localhost:8081/signup", values)
-      .then((res) => {
-        console.log("Registered Successfully");
-        // You can handle success as per your requirement
-      })
-      .catch((err) => console.log(err));
+    try {
+      const newUser = values;
+      console.log(newUser);
+      const response = await fetch("http://localhost:5001/api/user", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newUser),
+      });
+      if (response.ok) {
+        alert("User created successfully!");
+      } else {
+        throw new Error("Failed to create user");
+      }
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
     <div classname="d-flex justify-content-center align-items-center bg-primary vh-100">
       <div classname="bg-white p-3 rounded w-75">
-        <h2 classname="text-center">Donor Registration</h2>
-        <form onSubmit={handleSubmit} classname="row g-3">
+        <h2 classname="text-center">Register</h2>
+        <form classname="row g-3" onSubmit={handleSubmit}>
           <div classname="col-md-6">
-            <label htmlFor="name" classname="form-label">
-              <strong>name</strong>
+            <label htmlFor="username" classname="form-label">
+              <strong>Username</strong>
             </label>
             <input
               type="text"
-              placeholder="Enter name"
-              name="name"
+              placeholder="Enter username"
+              name="username"
               classname="form-control rounded-0"
               onChange={handleChange}
-              value={values.name}
+              value={values.username}
+              required
             />
           </div>
           <div classname="col-md-6">
             <label htmlFor="email" classname="form-label">
-              <strong>email</strong>
+              <strong>Email</strong>
             </label>
             <input
               type="email"
@@ -59,11 +69,12 @@ const SignUp = () => {
               classname="form-control rounded-0"
               onChange={handleChange}
               value={values.email}
+              required
             />
           </div>
           <div classname="col-md-6">
             <label htmlFor="password" classname="form-label">
-              <strong>password</strong>
+              <strong>Password</strong>
             </label>
             <input
               type="password"
@@ -72,19 +83,7 @@ const SignUp = () => {
               classname="form-control rounded-0"
               onChange={handleChange}
               value={values.password}
-            />
-          </div>
-          <div classname="col-md-6">
-            <label htmlFor="age" classname="form-label">
-              <strong>age</strong>
-            </label>
-            <input
-              type="number"
-              placeholder="Enter age"
-              name="age"
-              classname="form-control rounded-0"
-              onChange={handleChange}
-              value={values.age}
+              required
             />
           </div>
           <div classname="col-md-6">
@@ -97,30 +96,17 @@ const SignUp = () => {
               onChange={handleChange}
               value={values.gender}
             >
-              <option value="">Select gender</option>
+              {/* <option value="">Select gender</option> */}
               <option value="Male">Male</option>
               <option value="Female">Female</option>
               <option value="Other">Other</option>
             </select>
           </div>
           <div classname="col-md-6">
-            <label htmlFor="issues" classname="form-label">
-              <strong>issues</strong>
+            <label htmlFor="address" classname="form-label">
+              <strong>Address</strong>
             </label>
             <textarea
-              placeholder="Enter issues"
-              name="issues"
-              classname="form-control rounded-0"
-              onChange={handleChange}
-              value={values.issues}
-            />
-          </div>
-          <div classname="col-md-6">
-            <label htmlFor="address" classname="form-label">
-              <strong>address</strong>
-            </label>
-            <input
-              type="text"
               placeholder="Enter address"
               name="address"
               classname="form-control rounded-0"
@@ -130,15 +116,28 @@ const SignUp = () => {
           </div>
           <div classname="col-md-6">
             <label htmlFor="contact" classname="form-label">
-              <strong>Contact Number</strong>
+              <strong>Contact</strong>
             </label>
             <input
               type="text"
-              placeholder="Enter Contact Number"
+              placeholder="Enter contact"
               name="contact"
               classname="form-control rounded-0"
               onChange={handleChange}
               value={values.contact}
+            />
+          </div>
+          <div classname="col-md-6">
+            <label htmlFor="age" classname="form-label">
+              <strong>Age</strong>
+            </label>
+            <input
+              type="number"
+              placeholder="Enter age"
+              name="age"
+              classname="form-control rounded-0"
+              onChange={handleChange}
+              value={values.age}
             />
           </div>
           <div classname="col-md-12 text-center">
