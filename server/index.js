@@ -2,6 +2,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
+import cookieParser from "cookie-parser";
 
 // Routes
 import donorRoutes from "./routes/donor.js";
@@ -25,6 +26,7 @@ mongoose
 // Express configuration
 const app = express();
 app.use(express.json());
+app.use(cookieParser());
 app.use("/api/user", userRouter);
 app.use("/donors", donorRoutes);
 app.use("/api/auth", authRouter);
