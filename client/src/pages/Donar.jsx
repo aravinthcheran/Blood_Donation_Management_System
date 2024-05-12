@@ -2,10 +2,9 @@ import React, { useState } from "react";
 // import { useHistory } from "react-router-dom";
 import Sidebar from "./SideBar";
 import "./Donar.css";
-import Plasma from '../Assets/Plasma-1.jpeg';
-import Platlets from '../Assets/Platlets.jpeg';
-import RBC from '../Assets/RBC.jpeg';
-import '../ExtraCSS/Button.css';
+import Plasma from "../Assets/Plasma-1.jpeg";
+import Platlets from "../Assets/Platlets.jpeg";
+import RBC from "../Assets/RBC.jpeg";
 
 const Donar = () => {
   // const [donationAmount, setDonationAmount] = useState(0);
@@ -45,14 +44,18 @@ const Donar = () => {
     <div className="donar-landing">
       <Sidebar />
       <div className="donation-image">
-        <img src="https://media.giphy.com/media/VGKYr7yDEUESBlAbEW/giphy.gif" alt="Donation " className="logo" />
+        <img
+          src="https://media.giphy.com/media/VGKYr7yDEUESBlAbEW/giphy.gif"
+          alt="Donation "
+          className="logo"
+        />
       </div>
       <div className="donation-form">
         <h2>Welcome to Blood Donation Management System</h2>
         <div className="Content">
           <p>
-            The blood donation system plays a vital role in healthcare,
-            serving as a lifeline for countless individuals in need of blood
+            The blood donation system plays a vital role in healthcare, serving
+            as a lifeline for countless individuals in need of blood
             transfusions due to medical emergencies, surgeries, or chronic
             conditions. This system encompasses various components, including
             blood collection, testing, storage, and distribution, all working
@@ -64,8 +67,8 @@ const Donar = () => {
             need. These donors undergo a thorough screening process to ensure
             the safety of the donated blood and minimize the risk of
             transmitting infections or diseases. Once collected, the blood is
-            carefully tested for compatibility and screened for pathogens
-            before being processed and stored under controlled conditions.
+            carefully tested for compatibility and screened for pathogens before
+            being processed and stored under controlled conditions.
           </p>
           <p>
             Blood donation centers, hospitals, and blood banks form the
@@ -76,16 +79,16 @@ const Donar = () => {
             needed most.
           </p>
           <p>
-            The importance of the blood donation system cannot be overstated,
-            as access to safe and timely blood transfusions can mean the
-            difference between life and death for patients facing critical
-            medical situations. Through continued public awareness efforts and
-            support for blood donation drives, communities can help sustain
-            this essential system and ensure that patients receive the
-            lifesaving blood products they require.
+            The importance of the blood donation system cannot be overstated, as
+            access to safe and timely blood transfusions can mean the difference
+            between life and death for patients facing critical medical
+            situations. Through continued public awareness efforts and support
+            for blood donation drives, communities can help sustain this
+            essential system and ensure that patients receive the lifesaving
+            blood products they require.
           </p>
         </div>
-        <hr/>
+        <hr />
         <div className="Gap"></div>
         <div className="Imageblock">
           <div className="Interimage">
@@ -102,10 +105,10 @@ const Donar = () => {
           </div>
         </div>
         <div className="Gap"></div>
-        <hr/>
+        <hr />
         <div className="Gap"></div>
         <div className="Container">
-          <h3 >Make a Donation</h3>
+          <h3>Make a Donation</h3>
           <div className="form-group">
             <label htmlFor="amount">Donation Amount (ml):</label>
             <input
@@ -128,7 +131,9 @@ const Donar = () => {
               <option value="platelets">Platelets</option>
             </select>
           </div>
-          <div className="button-style"><button>Donate Now</button></div>
+          <div className="button-style">
+            <button>Donate Now</button>
+          </div>
           {/*onClick={handleDonation} to be added*/}
         </div>
       </div>
