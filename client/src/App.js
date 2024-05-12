@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MainPage from "./components/MainPage";
-import LoginUser from "./pages/LoginUser"; // Corrected import
-import SignUpUser from "./pages/SignUpUser";
+import Login from "./pages/Login"; // Corrected import
+import SignUp from "./pages/SignUp";
 import LoginDonor from "./pages/LoginDonor"; // Updated import
 import LoginHospital from "./pages/LoginHospital"; // Assuming you have a LoginHospital component
 import SignUpDonar from "./pages/SignUpDonar";
@@ -18,8 +18,8 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainPage />} />
-        <Route path="/login/user" element={<LoginUser />} />
-        <Route path="/signup/user" element={<SignUpUser />} />
+        <Route path="/login/user" element={<Login />} />
+        <Route path="/signup/user" element={<SignUp />} />
         <Route path="/pages/LoginDonar" element={<LoginDonor />} />
         {/* Updated path */}
         <Route path="/pages/LoginHospital" element={<LoginHospital />} />
