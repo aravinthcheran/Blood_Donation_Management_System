@@ -1,6 +1,8 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MainPage from "./components/MainPage";
+import LoginUser from "./pages/LoginUser"; // Corrected import
+import SignUpUser from "./pages/SignUpUser";
 import LoginDonor from "./pages/LoginDonor"; // Updated import
 import LoginHospital from "./pages/LoginHospital"; // Assuming you have a LoginHospital component
 import SignUpDonar from "./pages/SignUpDonar";
@@ -16,9 +18,11 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainPage />} />
-        <Route path="/pages/LoginDonar" element={<LoginDonor />} />{" "}
+        <Route path="/login/user" element={<LoginUser />} />
+        <Route path="/signup/user" element={<SignUpUser />} />
+        <Route path="/pages/LoginDonar" element={<LoginDonor />} />
         {/* Updated path */}
-        <Route path="/pages/LoginHospital" element={<LoginHospital />} />{" "}
+        <Route path="/pages/LoginHospital" element={<LoginHospital />} />
         {/* Assuming you have a LoginHospital component */}
         <Route path="/pages/SignUpDonar" element={<SignUpDonar />} />
         <Route path="/pages/SignUpHospital" element={<SignUpHospital />} />

@@ -5,6 +5,15 @@ import { NavLink } from "react-router-dom";
 const MainPage = () => {
   return (
     <div className="MainPage">
+      <div className="header">
+        <NavLink
+          to="/login/user"
+          style={{ textDecoration: "none", color: "black" }}
+        >
+          Login
+        </NavLink>
+      </div>
+
       <div className="contain">
         <div className="card">
           <NavLink
