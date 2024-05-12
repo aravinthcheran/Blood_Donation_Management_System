@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { decodePW } from "../utils/decodePW";
+import { decodePassword } from "../utils/decodePassword";
 
 const Login = () => {
   const [userDetails, setUserDetails] = useState({
@@ -28,7 +28,7 @@ const Login = () => {
           return user.email === userDetails.email;
         });
         if (user) {
-          decodePW(userDetails.password, user.password)
+          decodePassword(userDetails.password, user.password)
             .then((match) => {
               if (match) {
                 alert("Login successful!");
