@@ -148,7 +148,7 @@ const SignUp = () => {
           <div classname="col-md-12 text-center">
             <p>By signing up, you agree to our terms and policies</p>
             <Link
-              to="/pages/LoginDonar"
+              to="/login/user"
               classname="btn btn-default border w-50 bg-light rounded-0 text-decoration-none"
             >
               Login
