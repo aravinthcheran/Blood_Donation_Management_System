@@ -25,7 +25,7 @@ const Home = () => {
     ]
     return (
         <div className="dark:text-white-900">
-            <img src={bg} alt="" />
+            {/* <img src={bg} alt="" /> */}
             <div className='grid grid-cols-2 place-items-center mt-6 px-52'>
                 <div>
                     <img draggable={false} src={bg2} width="100%" alt="" />
@@ -81,9 +81,7 @@ const Home = () => {
                 )}
             </div>
             <br />
-            <div className='w-full bg-blood text-white-900 h-max text-sm text-center font-bold'>
-                <code>ॐ BloodLink @ {new Date().getFullYear()} ॐ || Made with ❤️ by Ujjwal</code>
-            </div>
+            
         </div>
     )
 }
