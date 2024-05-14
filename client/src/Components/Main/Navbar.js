@@ -41,7 +41,7 @@ const Navbar = (props) => {
                     </Link>
                     <div className="flex items-center justify-between">
                         <>
-                            <DropDown title="About Us" children={["Home", "About BloodLink", "Contact Us"]} links={["/", "/about", "/contactUs"]}></DropDown>
+                            {/* <DropDown title="About Us" children={["Home", "About BloodLink", "Contact Us"]} links={["/", "/about", "/contactUs"]}></DropDown> */}
                             {props.logIn ? (
                                 <>
                                     <Link
@@ -68,7 +68,7 @@ const Navbar = (props) => {
                                     <DropDown title="Blood Bank Login" children={["Login", "Add Your Bloodbank"]} links={["/login/bank", "/register/bank"]}></DropDown>
                                 </>
                             )}
-                            <button
+                            {/* <button
                                 className="mx-2 px-3 py-2 rounded-full hover:shadow-lg"
                                 onClick={() => {
                                     localStorage.setItem(
@@ -87,7 +87,7 @@ const Navbar = (props) => {
                                     className={`dark:text-white-900 fa-solid fa-lg fa-${theme == 0 ? "sun" : "moon"
                                         }`}
                                 ></i>
-                            </button>
+                            </button> */}
                         </>
                     </div>
                 </div>
