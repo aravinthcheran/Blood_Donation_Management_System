@@ -4,7 +4,7 @@ const { User, Donations, Requests, BloodBank } = require("../models/models");
 
 router.get("/", auth, async (req, res) => {
     try {
-        console.log("hum yha hain")
+        console.log("None")
         const user = await User.find({ _id: req.user });
         console.log(user);
         res.json(user);

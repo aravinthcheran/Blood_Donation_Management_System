@@ -8,6 +8,7 @@ const stock = { 'A+': 0, 'A-': 0, 'B+': 0, 'B-': 0, 'AB+': 0, 'AB-': 0, 'O+': 0,
 // Create schema for Users
 const userSchema = new mongoose.Schema({
     name: { type: String, required: true },
+    username: { type: String, unique: true, required: true }, 
     age: { type: Number, required: true },
     gender: { type: String, required: true },
     bloodGroup: { type: String, enum: bloodGroups, required: true },
